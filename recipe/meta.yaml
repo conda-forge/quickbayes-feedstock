@@ -22,6 +22,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
+    - joblib
     - numpy
     - scipy
 
