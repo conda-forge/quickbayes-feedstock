@@ -35,6 +35,7 @@ test:
     - python {{ python_min }}
     - pip
     - pytest
+    - gofit
   commands:
     - pip check
     - pytest test
