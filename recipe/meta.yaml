@@ -35,10 +35,9 @@ test:
     - python {{ python_min }}
     - pip
     - pytest
-    - gofit
   commands:
     - pip check
-    - pytest test
+    - pytest test/default test/shared
 
 about:
   home: https://github.com/ISISNeutronMuon/quickBayes
