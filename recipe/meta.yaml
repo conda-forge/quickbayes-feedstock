@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -22,17 +22,22 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
+    - joblib
     - numpy
     - scipy
 
 test:
   imports:
     - quickBayes
-  commands:
-    - pip check
+  source_files:
+    - test
   requires:
     - python {{ python_min }}
     - pip
+    - pytest
+  commands:
+    - pip check
+    - pytest test/default test/shared
 
 about:
   home: https://github.com/ISISNeutronMuon/quickBayes
